@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>InstaFeed</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand">
+                <img src="images/instaIcon.png">
+                <span class="h5">Instagram</span>
+              </a>
+              <form class="d-flex" role="search">
+                <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#newPostModal">
+                  Create a new post
+                </button>
+                <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="newPostModalLabel">
+                          Create a new post
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <label for="">Caption:</label>
+                        <textarea class="form-control" placeholder="Add the caption of your post here" id="floatingTextarea2"></textarea>
+                        <div class="d-flex justify-content-start gap-2 mt-2">
+                          <i class="fa-solid fa-camera p-2 rounded border border-light-subtle" style="background-color: #f8f9fa"></i>
+                          <i class="fa-solid fa-location-dot p-2 rounded border border-light-subtle" style="background-color: #f8f9fa"></i>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-success">Publish</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                        <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                    </svg>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                    <li><a class="dropdown-item" href="#">Provacy and Data</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item text-danger" href="#">Log Out</a></li>
+                  </ul>
+                </div>
+              </form>
+            </div>
+          </nav>
+
+
+
+        <!-------first page---------------->
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="justify-content: center;">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app" viewBox="0 0 16 16">
+                    <path d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4z"/>
+                </svg>
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3" viewBox="0 0 16 16">
+                    <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5zM1.5 1a.5.5 0 0 0-.5.5V5h4V1zM5 6H1v4h4zm1 4h4V6H6zm-1 1H1v3.5a.5.5 0 0 0 .5.5H5zm1 0v4h4v-4zm5 0v4h3.5a.5.5 0 0 0 .5-.5V11zm0-1h4V6h-4zm0-5h4V1.5a.5.5 0 0 0-.5-.5H11zm-1 0V1H6v4z"/>
+                </svg>
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+
+
+                <div class="card text-center">
+                    <div class="card-header">
+                      <h4 style="float: left;">Post 1!</h4>
+                      <p style="float: right;">4/07</p>
+                    </div>
+                    <div class="card-body">
+                      <img id="postPic" src="images/Post1.jpeg">
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <b style="float:left;">1545 Likes</b><br>
+                      <p style="text-align: left;">This is the text that you will input in the bottom of your post I hope you enjoy this site<br>I have been working on I think it is amazing!</p>
+                    </div>
+                  </div>
+                  <div class="card text-center">
+                    <div class="card-header">
+                      <h4 style="float: left;">Post 2!</h4>
+                      <p style="float: right;">4/27</p>
+                    </div>
+                    <div class="card-body">
+                      <img id="postPic" src="images/Post2.jpeg">
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <b style="float:left;">340 Likes</b><br>
+                      <p style="text-align: left;">This is the text that you will input in the bottom of your post I hope you enjoy this site<br>I have been working on I think it is amazing!</p>
+                    </div>
+                  </div>
+                  <div class="card text-center">
+                    <div class="card-header">
+                      <h4 style="float: left;">Post 3!</h4>
+                      <p style="float: right;">7/07</p>
+                    </div>
+                    <div class="card-body">
+                      <img id="postPic" src="images/Post3.jpeg">
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <b style="float:left;">343 Likes</b><br>
+                      <p style="text-align: left;">This is the text that you will input in the bottom of your post I hope you enjoy this site<br>I have been working on I think it is amazing!</p>
+                    </div>
+                  </div>
+                  <div class="card text-center">
+                    <div class="card-header">
+                      <h4 style="float: left;">Post 4!</h4>
+                      <p style="float: right;">8/19</p>
+                    </div>
+                    <div class="card-body">
+                      <img id="postPic" src="images/Post4.jpeg">
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <b style="float:left;">145 Likes</b><br>
+                      <p style="text-align: left;">This is the text that you will input in the bottom of your post I hope you enjoy this site<br>I have been working on I think it is amazing!</p>
+                    </div>
+                  </div>
+                  <div class="card text-center">
+                    <div class="card-header">
+                      <h4 style="float: left;">Post 5!</h4>
+                      <p style="float: right;">6/17</p>
+                    </div>
+                    <div class="card-body">
+                      <img id="postPic" src="images/Post5.jpeg">
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <b style="float:left;">190 Likes</b><br>
+                      <p style="text-align: left;">This is the text that you will input in the bottom of your post I hope you enjoy this site<br>I have been working on I think it is amazing!</p>
+                    </div>
+                  </div>
+                  <div class="card text-center">
+                    <div class="card-header">
+                      <h4 style="float: left;">Post 6!</h4>
+                      <p style="float: right;">7/08</p>
+                    </div>
+                    <div class="card-body">
+                      <img id="postPic" src="images/Post6.jpeg">
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <b style="float:left;">1540 Likes</b><br>
+                      <p style="text-align: left;">This is the text that you will input in the bottom of your post I hope you enjoy this site<br>I have been working on I think it is amazing!</p>
+                    </div>
+                  </div>
+                  <div class="card text-center">
+                    <div class="card-header">
+                      <h4 style="float: left;">Post 7!</h4>
+                      <p style="float: right;">4/07</p>
+                    </div>
+                    <div class="card-body">
+                      <img id="postPic" src="images/Post7.jpeg">
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <b style="float:left;">230 Likes</b><br>
+                      <p style="text-align: left;">This is the text that you will input in the bottom of your post I hope you enjoy this site<br>I have been working on I think it is amazing!</p>
+                    </div>
+                  </div>
+                  <div class="card text-center">
+                    <div class="card-header">
+                      <h4 style="float: left;">Post 8!</h4>
+                      <p style="float: right;">4/07</p>
+                    </div>
+                    <div class="card-body">
+                      <img id="postPic" src="images/Post8.jpeg">
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <b style="float:left;">143 Likes</b><br>
+                      <p style="text-align: left;">This is the text that you will input in the bottom of your post I hope you enjoy this site<br>I have been working on I think it is amazing!</p>
+                    </div>
+                  </div>
+                  <div class="card text-center">
+                    <div class="card-header">
+                      <h4 style="float: left;">Post 9!</h4>
+                      <p style="float: right;">2/14</p>
+                    </div>
+                    <div class="card-body">
+                      <img id="postPic" src="images/Post9.jpeg">
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <b style="float:left;">140 Likes</b><br>
+                      <p style="text-align: left;">This is the text that you will input in the bottom of your post I hope you enjoy this site<br>I have been working on I think it is amazing!</p>
+                    </div>
+                  </div>
+            </div>
+            <!---------Second Page------------>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                <div class="container text-center">
+                    <div class="row">
+                    <div class="col">
+                      <img id="postPic" src="images/Post1.jpeg">
+                    </div>
+                    <div class="col">
+                      <img id="postPic" src="images/Post2.jpeg">
+                    </div>
+                    <div class="col">
+                      <img id="postPic" src="images/Post3.jpeg">
+                    </div>
+                    </div>
+
+                    <div class="container text-center">
+                        <div class="row">
+                        <div class="col">
+                          <img id="postPic" src="images/Post4.jpeg">
+                        </div>
+                        <div class="col">
+                          <img id="postPic" src="images/Post5.jpeg">
+                        </div>
+                        <div class="col">
+                          <img id="postPic" src="images/Post6.jpeg">
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="container text-center">
+                        <div class="row">
+                        <div class="col">
+                          <img id="postPic" src="images/Post7.jpeg">
+                        </div>
+                        <div class="col">
+                          <img id="postPic" src="images/Post8.jpeg">
+                        </div>
+                        <div class="col">
+                          <img id="postPic" src="images/Post9.jpeg">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>   
+</body>
+</html>
